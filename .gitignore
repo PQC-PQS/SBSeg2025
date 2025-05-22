@@ -1,4 +1,5 @@
 */venv/*
+venv/*
 
 *.pyc
 *.class
@@ -7,3 +8,6 @@
 
 *.csv
 *.mvn/
+
+*/pqc_algorithms/liboqs
+*/pqc_algorithms/liboqs-python
