@@ -1,12 +1,29 @@
 # ECDSA + Fips 204 + Fips 205 em Java
 
 ## Requisitos
-- Ter o Maven instalado, teste com:
+
+Ter java 17, ou mais recente, instalado. Verifique com:
+```
+java --version
+```
+#### Opcionalmente
+Ter o Maven instalado. Verifique com:
 ```bash
 mvn -v
 ```
 
 ## Instruções
+
+É possível executar com o Maven ou com um script.
+
+### Executando com Script
+
+Execute o comando:
+```
+./experiment_run.sh
+```
+
+### Executando com Maven
 
 <!-- - Entre no diretório __signature_algorithms-comparision__
 
@@ -24,5 +41,5 @@ mvn clean install
 mvn exec:java
 ```
 
-### Resultados
-- Verifique os resultados no diretório __/results__
+## Resultados
+- Verifique os resultados no diretório [results](results)
