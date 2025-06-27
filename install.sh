@@ -33,11 +33,11 @@ sudo cmake --install build
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 # Create virtual environment 
-cd ..
-python3 -m venv venv
-source venv/bin/activate
-python3 -m ensurepip --upgrade
-pip install -r requirements.txt
+# cd ..
+# python3 -m venv venv
+# source venv/bin/activate
+# python3 -m ensurepip --upgrade
+# pip install -r requirements.txt
 
 # Clone the repository
 # Configure and install the wrapper
