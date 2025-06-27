@@ -5,9 +5,12 @@ venv/*
 *.class
 
 *.jar
+*/target/
+*/results/
 
 *.csv
 *.mvn/
+*.xlsx
 
 */pqc_algorithms/liboqs
 */pqc_algorithms/liboqs-python
