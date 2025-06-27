@@ -1,5 +1,37 @@
 # BlockSim Simultor
 
+## Instruções 
+
+### Atualizando as métricas obtidas
+
+No modelo de [transação](Models/Ethereum/Transaction.py), atualize ou adicione as métricas de média e desvio padrão para os pares de linguagem e algoritmo.
+
+Os nomes devem ser iguais aos do arquivo InputsConfig (ver abaixo).
+
+### Selecionando o algoritmo e linguagem de programação
+Em [InputsConfig.py](InputsConfig.py), ao fim do modelo 2, selecione (comentando/descomentando) o par "Signing_Algorithm" e "means_from_language" como desejar em "Other Parameters".
+
+Exemplo, para executar com os tempos obtidos do ECDSA384 em Java:
+ ```
+    """ Other Parameters """
+    Signing_Algorithm = "ECDSA384"
+    # Signing_Algorithm = "Dillithium3"
+    # Signing_Algorithm = "Sphincs+192f"
+
+    means_from_language = "Java"
+    # means_from_language = "Python"
+    # means_from_language = "C-C++"
+```
+
+## Executando
+
+Use o comando:
+```
+python3 Main.py
+```
+
+# Readme antigo abaixo
+
 ## What is BlockSim Simulator?
 **BlockSim** is an open source blockchain simulator, capturing network, consensus and incentives layers of blockchain systems. BlockSim aims to provide simulation constructs that are intuitive, hide unnecessary detail and can be easily manipulated to be applied to a large set of blockchains design and deployment questions (related to performance, reliability, security or other properties of interest). At the core of BlockSim is a Base Model, which contains a number of functional blocks (e.g., blocks, transactions and nodes) common across blockchains, that can be extended and configured as suited for the system and study of interest. BlockSim is implemented in **Python**.
 
