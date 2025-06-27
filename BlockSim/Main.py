@@ -2,6 +2,7 @@ from InputsConfig import InputsConfig as p
 from Event import Event, Queue
 from Scheduler import Scheduler
 from Statistics import Statistics
+import os
 
 if p.model == 3:
     from Models.AppendableBlock.BlockCommit import BlockCommit
@@ -74,7 +75,10 @@ def main():
         Incentives.distribute_rewards()
         # calculate the simulation results (e.g., block statstics and miners' rewards)
         Statistics.calculate()
-
+        results_dir = "results"
+        if not os.path.exists(results_dir):
+            os.makedirs(results_dir)
+    
         if p.model == 3:
             Statistics.print_to_excel(i, True)
             Statistics.reset()
@@ -82,11 +86,11 @@ def main():
             ########## reset all global variable before the next run #############
             Statistics.reset()  # reset all variables used to calculate the results
             Node.resetState()  # reset all the states (blockchains) for all nodes in the network
-            fname = "{0}(Allverify)1day_{1}M_{2}K.xlsx".format(p.means_from_language+"-"+p.Signing_Algorithm,
+            fname = "{0}/{1}(Allverify)1day_{2}M_{3}K.xlsx".format(results_dir,p.means_from_language+"-"+p.Signing_Algorithm,
                 p.Bsize/1000000, p.Tn/1000)
             # print all the simulation results in an excel file
             Statistics.print_to_excel(fname)
-            fname = "{0}(Allverify)1day_{1}M_{2}K.xlsx".format(p.means_from_language+"-"+p.Signing_Algorithm,
+            fname = "{0}/{1}(Allverify)1day_{2}M_{3}K.xlsx".format(results_dir,p.means_from_language+"-"+p.Signing_Algorithm,
                 p.Bsize/1000000, p.Tn/1000)
             # print all the simulation results in an excel file
             Statistics.print_to_excel(fname)
